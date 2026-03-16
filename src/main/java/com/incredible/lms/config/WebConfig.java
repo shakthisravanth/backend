@@ -10,7 +10,13 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:5173", "http://localhost:5174", "http://localhost:5175") // Student and Admin dev ports
+                .allowedOrigins(
+                    "http://localhost:5173", 
+                    "http://localhost:5174", 
+                    "http://localhost:5175", // Student and Admin dev ports
+                    "https://incredible-student-demo.netlify.app",
+                    "https://incred-admin-demo.netlify.app"
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);

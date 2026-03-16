@@ -43,7 +43,13 @@ public class SecurityConfiguration {
         @Bean
         public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
                 org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
-                configuration.setAllowedOrigins(java.util.List.of("http://localhost:5173", "http://localhost:5174", "http://localhost:5175"));
+                configuration.setAllowedOrigins(java.util.List.of(
+                    "http://localhost:5173", 
+                    "http://localhost:5174", 
+                    "http://localhost:5175",
+                    "https://incredible-student-demo.netlify.app",
+                    "https://incred-admin-demo.netlify.app"
+                ));
                 configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                 configuration.setAllowedHeaders(
                                 java.util.List.of("Authorization", "Content-Type", "Accept", "X-Requested-With"));
