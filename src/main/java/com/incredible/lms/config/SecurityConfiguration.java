@@ -48,12 +48,13 @@ public class SecurityConfiguration {
                     "http://localhost:5174", 
                     "http://localhost:5175",
                     "https://incredible-student-demo.netlify.app",
-                    "https://incred-admin-demo.netlify.app"
+                    "https://incredible-admin-demo.netlify.app"
                 ));
-                configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+                configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
                 configuration.setAllowedHeaders(
-                                java.util.List.of("Authorization", "Content-Type", "Accept", "X-Requested-With"));
+                                java.util.List.of("Authorization", "Content-Type", "Accept", "X-Requested-With", "Origin"));
                 configuration.setExposedHeaders(java.util.List.of("Authorization"));
+                configuration.setMaxAge(3600L);
                 configuration.setAllowCredentials(true);
 
                 org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
